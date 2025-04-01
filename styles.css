@@ -1,29 +1,27 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
+* {
     margin: 0;
-    background-color: #f00;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-body::-webkit-scrollbar {
-    display: none;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth; /* Enables smooth scrolling */
+html, body {
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: "Winky Sans", sans-serif;
+    scroll-snap-type: y mandatory;
+}
+
+.section {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
 }
 
 .firstpage {
     background-color: #898a93;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
 }
 
 .chart-container {
@@ -34,8 +32,8 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 100%;
+    width: 100%;
 }
 
 .pie-chart {
@@ -43,33 +41,38 @@ html {
     height: 85vh;
     border-radius: 50%;
     rotate: -5deg;
-    z-index: 0;
     position: relative;
 }
 
-.firsttext {
+.firsttext-wrapper {
     position: absolute;
+    width: 100%;
+    height: 100%;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -15%);
+}
+
+.firsttext {
     font-size: 6vh;
     color: white;
-    font-family: "Winky Sans", sans-serif;
     text-align: center;
-    transform: translate(-50%, -50%);
     animation: floatUpFadeIn 1s ease-out forwards, slightrotate 10s ease-in-out infinite;
     rotate: 5deg;
+    position: relative;
 }
 
 @keyframes floatUpFadeIn {
     0% {
         opacity: 0;
-        transform: translate(-50%, -50%) translateY(20px);
+        transform: translateY(20px);
     }
     100% {
         opacity: 1;
-        transform: translate(-50%, -50%) translateY(0px);
+        transform: translateY(0);
     }
 }
+
 @keyframes slightrotate {
     0%, 100% {
         rotate: 6deg;
@@ -79,16 +82,12 @@ html {
     }
 }
 
-b {
-    font-weight: 1000;
-}
-
 .chartoutline {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 85vh;
-    height: 85vh;
+    width: 86.5vh;
+    height: 86.5vh;
     transform: translate(-50%, -50%);
     z-index: -1;
     background: #c0c0c7;
@@ -112,7 +111,6 @@ b {
     bottom: 20px;
     right: 40px;
     fill: #c0c0c7;
-    transform: translateX(-50%);
     width: 5vh;
     height: 5vh;
     animation: bounce 1.5s infinite;
@@ -129,18 +127,35 @@ b {
 
 .secondpage {
     background-color: #5a5a5e;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    top: 100vh;
 }
 
 .thatmeans {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     font-size: 3vw;
     color: white;
-    font-family: "Winky Sans", sans-serif;
-    margin: 4vh 10vw 0 10vw;
-    line-height: 0.5;
+    padding: 0 10vw;
+    line-height: 1.2;
+}
+
+b {
+    font-weight: 1000;
+}
+
+.falling-background {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    transition: top 1s ease-out;
+}
+
+.falling-background.animate {
+    top: 0;
 }
