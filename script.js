@@ -35,13 +35,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     moveInCircle();
-  }, 1000);
-
-  window.addEventListener("scroll", (event) => {
-    console.log("Scroll event triggered", event); // Debugging log
-    if (!fallingBackground.classList.contains("animate")) {
-      fallingBackground.classList.add("animate");
-      console.log("Animate class added to falling-background");
-    }
-  });
+  }, 1000); 
 });

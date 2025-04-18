@@ -10,6 +10,7 @@ html, body {
     overflow-x: hidden;
     font-family: "Winky Sans", sans-serif;
     scroll-snap-type: y mandatory;
+    z-index:0;
 }
 
 .section {
@@ -34,6 +35,7 @@ html, body {
     align-items: center;
     height: 100%;
     width: 100%;
+    z-index: 1;
 }
 
 .pie-chart {
@@ -131,31 +133,37 @@ html, body {
 
 .thatmeans {
     position: absolute;
-    top: 50%;
+    top: 10vh;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     text-align: center;
     font-size: 3vw;
     color: white;
-    padding: 0 10vw;
-    line-height: 1.2;
+    padding: 0 0;
+    line-height: 1.5;
+    width:120vh;
 }
 
 b {
     font-weight: 1000;
 }
 
-.falling-background {
-    position: fixed;
-    top: -100%;
+.fallingbackground {
+    position: absolute;
+    top: -100vh;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000;
-    transition: top 1s ease-out;
+    width: 100vw;
+    height: 100vh;
+    background-color: #5a5a5e;
+    z-index: -1;
+    animation: fall 2s forwards;
 }
 
-.falling-background.animate {
-    top: 0;
+@keyframes fall {
+    0% {
+        top: -100vh;
+    }
+    100% {
+        top: 0;
+    }
 }
