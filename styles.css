@@ -114,6 +114,7 @@ html, body {
     width: 5vh;
     height: 5vh;
     animation: bounce 1.5s infinite;
+    cursor: pointer;
 }
 
 @keyframes bounce {
@@ -127,18 +128,24 @@ html, body {
 
 .secondpage {
     background-color: #5a5a5e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10vh;
 }
 
 .thatmeans {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 2vh);
     text-align: center;
     font-size: 3vw;
     color: white;
     padding: 0 10vw;
     line-height: 1.2;
+    width: 85vw;
 }
 
 b {
@@ -158,4 +165,153 @@ b {
 
 .falling-background.animate {
     top: 0;
+}
+
+.svg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 10%); /* Adjust column size */
+    grid-auto-rows: 1fr; /* Ensure rows dynamically fill the height */
+    gap: 0; /* Remove gaps between cells */
+    width: 100vw; /* Ensure the grid spans the full width */
+    height: 85vh; /* Ensure the grid spans the full height */
+    margin: 5vh 0 0 0; /* Remove negative margins */
+}
+
+.svg-grid svg {
+    width: 100%; /* Make SVGs fill their grid cells */
+    height: 100%; /* Maintain aspect ratio within cells */
+    fill: #c0c0c7;
+    transition: transform 0.3s ease;
+}
+
+.svg-grid svg:hover {
+    transform: scale(1.1); /* Slight hover effect */
+}
+
+@keyframes slowRotate {
+    0% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(-2deg);
+    }
+}
+
+.svg-grid svg.healthy {
+    animation: slowRotate 1s infinite ease-in-out; /* Apply the rotation animation */
+}
+
+
+.thirdpage {
+    background-color: #75757a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10vh;
+}
+.relaylogo {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    height: 100%; /* Take full height of the parent */
+    width: 100%; /* Take full width of the parent */
+    transform: translate(27vh,-3vh)
+}
+.moon{
+    scale:200%;
+    animation: twinkle 8s infinite ease-in-out;
+    transform: translateX(-8vh)
+}
+.firststar{
+    scale:200%;
+    animation:twinkle 4s infinite ease-in-out;
+    transform: translate(-0.5vh,-16vh)
+
+}
+.secondstar{
+    scale:200%;
+    animation:twinkle 3s infinite ease-in-out;
+    transform: translate(3vh,-13.75vh)
+
+}
+.thirdstar{
+    scale:200%;
+    animation:twinkle 2s infinite ease-in-out;
+    transform: translate(6vh,-9.5vh)
+
+}
+.bigstar{
+    scale:200%;
+    animation:twinkle 5s infinite ease-in-out;
+    transform: translate(-24vh,-14vh)
+
+}
+.relayis {
+    color: #fff;
+    width:50vh;
+    font-size:3.5vh;
+    transform: translateX(-36vh)
+}
+.relayis b {
+    font-weight:700;
+    animation:twinkle 5s infinite ease-in-out;
+}
+@keyframes twinkle {
+    0% {
+        opacity: 100%;
+    } 50% {
+        opacity:50%;
+    } 100% {
+        opacity: 100%;
+    }
+}
+
+.fourthpage {
+    background-color: #4a4a50;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.liquid-container {
+    position: relative;
+    width: 20vh;
+    height: 60vh;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #2c2c34;
+}
+
+.liquid {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Changed from 62% to 100% */
+    display: block;
+}
+
+.liquid path {
+    animation: morphLiquid 6s infinite ease-in-out; /* Morph between SVG paths */
+    transform-origin: bottom; /* Ensure morphing happens relative to the bottom */
+}
+
+@keyframes morphLiquid {
+    0% {
+        d: path("M200 387V15.9998C200 15.9998 197 14.9998 177.5 7.50002C165.783 2.99354 146 -5.9999 121.5 9.5C94 30.5 57.5 41.4999 42 20.9999C29.6 4.59986 8.83333 10.1665 0 14.9998V387H200Z");
+    }
+    33% {
+        d: path("M200 384V12.9999C200 12.9999 206 13.9998 186.5 6.5L186.5 6.49989C174.783 1.99339 154 -5.99974 129.5 9.50003C104 21 83.5 6.49988 54 4.50005C33.4869 3.10945 13 29.5 0 11.9999V384H200Z");
+    }
+    66% {
+        d: path("M200 385V13.9999C200 13.9999 209 7.4999 193 19C172.04 34.0649 158 4.98024 138 13.9999C112.5 25.4998 115 24.4998 82.5 12.9999C63.1175 6.14144 16.5 -12 0 12.9999V385H200Z");
+    }
+    100% {
+        d: path("M200 387V15.9998C200 15.9998 197 14.9998 177.5 7.50002C165.783 2.99354 146 -5.9999 121.5 9.5C94 30.5 57.5 41.4999 42 20.9999C29.6 4.59986 8.83333 10.1665 0 14.9998V387H200Z");
+    }
 }
