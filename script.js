@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const svgGrid = document.querySelector(".svg-grid");
   if (svgGrid) {
-    const totalSVGs = 49;
+    const totalSVGs = 50;
     const highlightedCount = 10;
     const highlightedIndices = new Set();
 
