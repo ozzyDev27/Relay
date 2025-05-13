@@ -5,17 +5,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let percentage = 0;
   function animatePie() {
-    const diff = 40 - percentage;
-    if (Math.abs(diff) > 0.1) {
-      percentage += diff * 1;
-      pieChart.style.background = `conic-gradient(#343638 0% ${percentage}%, #959699 ${percentage}% 100%)`;
-      requestAnimationFrame(animatePie);
-    } else {
-      percentage = 40;
-      pieChart.style.background = `conic-gradient(#343638 0% ${percentage}%, #959699 ${percentage}% 100%)`;
+    const duration = 1000; // Total animation duration in milliseconds
+    const startTime = performance.now();
+
+    function step(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1); // Clamp progress between 0 and 1
+      const easedProgress = progress * (2 - progress); // Ease-out function
+
+      percentage = easedProgress * 40; // Target percentage is 40
+      pieChart.style.background = `conic-gradient(#d79147 0% ${percentage}%,rgb(225, 174, 112) ${percentage}% 100%)`;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
     }
+
+    requestAnimationFrame(step);
   }
-  requestAnimationFrame(animatePie);
+
+  requestAnimationFrame(() => {
+    animatePie(); // Ensure animation starts after rendering is complete
+  });
 
   setTimeout(() => {
     const maxRadius = 0.5;
@@ -43,8 +54,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const scrollArrow = document.querySelector(".scrolldownarrow");
-  const nextSection = document.querySelector(".secondpage");
+  const scrollArrow = document.getElementById("scrollArrow");
+  const nextSection = document.getElementById("secondPage");
   scrollArrow?.addEventListener("click", () => {
     nextSection.scrollIntoView({ behavior: "smooth" });
   });
@@ -72,13 +83,37 @@ document.addEventListener("DOMContentLoaded", () => {
           c0,1.956,1.587,3.543,3.543,3.543s3.542-1.587,3.542-3.543V30.771z"/>`;
 
       if (highlightedIndices.has(i)) {
-        svg.style.fill = "#707077";
+        svg.style.fill = "#244c8d";
       } else {
-        svg.style.fill = "#c0c0c7";
+        svg.style.fill = "#7aaaf7";
         svg.classList.add("healthy");
       }
 
       svgGrid.appendChild(svg);
+    }
+  }
+
+  // Create SVG grid for fifthpage
+  const fifthPageGrid = document.querySelector(".fifthpage .svg-grid");
+  if (fifthPageGrid) {
+    const totalSVGs = 50;
+
+    for (let i = 0; i < totalSVGs; i++) {
+      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      svg.setAttribute("viewBox", "0 0 100 100");
+      svg.innerHTML = `
+        <circle cx="50" cy="13.979" r="7.312"/>
+        <path d="M67.709,30.771c0-4.584-3.716-8.3-8.302-8.3h-18.73c-4.583,0-8.3,3.716-8.3,8.3v22.358
+          c0,1.956,1.584,3.543,3.54,3.543s3.545-1.587,3.545-3.543V35.021c0.058-0.296,0.307-0.523,0.618-0.523
+          c0.354,0,0.643,0.288,0.643,0.643v53.695c0,2.483,2.017,4.497,4.496,4.497c2.484,0,4.499-2.014,4.499-4.497V56.983
+          c0-0.206,0.166-0.372,0.371-0.372s0.371,0.166,0.371,0.372v31.853c0,2.483,2.015,4.497,4.497,4.497
+          c2.481,0,4.496-2.014,4.496-4.497V35.028c0.056-0.298,0.307-0.529,0.621-0.529c0.354,0,0.642,0.288,0.642,0.643v17.988
+          c0,1.956,1.587,3.543,3.543,3.543s3.542-1.587,3.542-3.543V30.771z"/>`;
+
+      svg.style.fill = "#7aaaf7";
+      svg.classList.add("healthy");
+
+      fifthPageGrid.appendChild(svg);
     }
   }
 
@@ -113,4 +148,5 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   morphToNext();
+
 });

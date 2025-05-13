@@ -12,7 +12,7 @@
 <body>
   <div class="falling-background"></div>
 
-  <div class="section firstpage">
+  <div class="section firstpage" data-color="red">
     <div class="chart-container">
       <div class="chartoutline"></div>
       <div class="pie-chart" id="pieChart">
@@ -21,12 +21,12 @@
         </div>
       </div>
     </div>
-    <svg xmlns="http://www.w3.org/2000/svg" class="scrolldownarrow" viewBox="0 0 30.021 30.021">
+    <svg xmlns="http://www.w3.org/2000/svg" class="scrolldownarrow" id="scrollArrow" viewBox="0 0 30.021 30.021">
       <path d="M28.611,13.385l-11.011,9.352c-0.745,0.633-1.667,0.949-2.589,0.949c-0.921,0-1.842-0.316-2.589-0.949L1.411,13.385c-1.684-1.43-1.89-3.954-0.46-5.638c1.431-1.684,3.955-1.89,5.639-0.459l8.421,7.151l8.42-7.151c1.686-1.43,4.209-1.224,5.639,0.459C30.5,9.431,30.294,11.955,28.611,13.385z"/>
     </svg>
   </div>
 
-  <div class="section secondpage">
+  <div class="section secondpage" id="secondPage" data-color="blue">
     <div class="thatmeans">
       <p>That means for every <b>5 Canadians</b>,</p>
       <p><b>2</b> will be diagnosed with cancer in their lifetime.</p>
@@ -34,29 +34,72 @@
     <div class="svg-grid"></div>
   </div>
 
-  <div class="section thirdpage">
+  <div class="section thirdpage" data-color="purple">
     <div class="relaylogo">
-      <div class="moon"><svg xmlns="http://www.w3.org/2000/svg" width="15vh" height="29.2vh" viewBox="0 0 150 292"><path d="M149.944 0C-18.0559 7.40215e-06 -79.5559 259.5 149.944 292C8.94414 230 14.4441 63.5 149.944 0Z" fill="white"/></svg></div>
-      <div class="firststar"><svg xmlns="http://www.w3.org/2000/svg" width="3.3vh" height="2.8vh" viewBox="0 0 33 28"><path d="M22 0L0 22L33 28L22 0Z" fill="white"/></svg></div>
-      <div class="secondstar"><svg xmlns="http://www.w3.org/2000/svg" width="3vh" height="3.1vh" viewBox="0 0 30 31"><path d="M29.1973 0.602801L0.346219 12.2483L28.3724 30.6747L29.1973 0.602801Z" fill="white"/></svg></div>
-      <div class="thirdstar"><svg xmlns="http://www.w3.org/2000/svg" width="3.2vh" height="2.9vh" viewBox="0 0 32 29"><path d="M31.3578 0.565223L0.245057 0.547471L19.3212 28.1355L31.3578 0.565223Z" fill="white"/></svg></div>
-      <div class="bigstar"><svg xmlns="http://www.w3.org/2000/svg" width="6.1vh" height="6.4vh" viewBox="0 0 61 64"><path d="M23 39.5L0 31.5L23 24V0L38 18.5L61 12L48 33L61 51.5L38 45L23 63.5V39.5Z" fill="white"/></svg></div>
+      <div class="moon"><svg xmlns="http://www.w3.org/2000/svg" width="15vh" height="29.2vh" viewBox="0 0 150 292"><path d="M149.944 0C-18.0559 7.40215e-06 -79.5559 259.5 149.944 292C8.94414 230 14.4441 63.5 149.944 0Z" /></svg></div>
+      <div class="firststar"><svg xmlns="http://www.w3.org/2000/svg" width="3.3vh" height="2.8vh" viewBox="0 0 33 28"><path d="M22 0L0 22L33 28L22 0Z" /></svg></div>
+      <div class="secondstar"><svg xmlns="http://www.w3.org/2000/svg" width="3vh" height="3.1vh" viewBox="0 0 30 31"><path d="M29.1973 0.602801L0.346219 12.2483L28.3724 30.6747L29.1973 0.602801Z" /></svg></div>
+      <div class="thirdstar"><svg xmlns="http://www.w3.org/2000/svg" width="3.2vh" height="2.9vh" viewBox="0 0 32 29"><path d="M31.3578 0.565223L0.245057 0.547471L19.3212 28.1355L31.3578 0.565223Z" /></svg></div>
+      <div class="bigstar"><svg xmlns="http://www.w3.org/2000/svg" width="6.1vh" height="6.4vh" viewBox="0 0 61 64"><path d="M23 39.5L0 31.5L23 24V0L38 18.5L61 12L48 33L61 51.5L38 45L23 63.5V39.5Z" /></svg></div>
       <div class="relayis">
         <p>Relay for Life is a <b>high-school based fundraising event</b> for the <b>Canadian Cancer Society</b>, bringing people together to <b>support cancer research</b> and celebrate survivors!</p>
       </div>
     </div>
   </div>
 
-  <div class="section fourthpage">
+  <div class="section fourthpage" data-color="green">
     <div class="liquid-container">
-        <svg class="liquid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2412 425" preserveAspectRatio="none">
-            <path d="M44.5 25.8313C31.7 2.63127 9.5 13.6693 0 22.8359V424.331H1206V22.8313C1191.17 34.8313 1157.7 56.4313 1136.5 46.8313C1115.3 37.2313 1088 44.1646 1077 48.8313C1059.33 54.8313 1031 60.8313 1016.5 46.8313C1004.21 34.962 975.667 24.8313 959 23.8313C947.667 23.6646 921.2 26.2313 906 37.8313C887 52.3313 874.5 88.3313 818.5 46.8313C753.312 -1.47775 729 -2.16872 718 1.83128C707 5.83128 684.5 42.3313 678.5 44.8313C672.5 47.3313 648.5 38.8313 642.5 34.8313C636.5 30.8313 597 24.3313 574.5 37.8313C550.919 51.9799 520.087 5.83129 497 5.83129C477 5.83129 478.5 12.8683 458.5 23.8313C436 36.1646 416 41.3313 405.5 31.3313C391.982 18.4567 338.336 14.1773 311.5 24.3313C293 31.3313 240.5 8.83127 202.5 1.83128C179 -2.49765 153.667 15.4979 137.5 22.8313C111.833 33.4979 57.3 49.0313 44.5 25.8313Z"></path>
-            <path d="M44.5 25.8313C31.7 2.63127 9.5 13.6693 0 22.8359V424.331H1206V22.8313C1191.17 34.8313 1157.7 56.4313 1136.5 46.8313C1115.3 37.2313 1088 44.1646 1077 48.8313C1059.33 54.8313 1031 60.8313 1016.5 46.8313C1004.21 34.962 975.667 24.8313 959 23.8313C947.667 23.6646 921.2 26.2313 906 37.8313C887 52.3313 874.5 88.3313 818.5 46.8313C753.312 -1.47775 729 -2.16872 718 1.83128C707 5.83128 684.5 42.3313 678.5 44.8313C672.5 47.3313 648.5 38.8313 642.5 34.8313C636.5 30.8313 597 24.3313 574.5 37.8313C550.919 51.9799 520.087 5.83129 497 5.83129C477 5.83129 478.5 12.8683 458.5 23.8313C436 36.1646 416 41.3313 405.5 31.3313C391.982 18.4567 338.336 14.1773 311.5 24.3313C293 31.3313 240.5 8.83127 202.5 1.83128C179 -2.49765 153.667 15.4979 137.5 22.8313C111.833 33.4979 57.3 49.0313 44.5 25.8313Z"></path>
+        <svg class="liquida" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 1206 425" fill="none">
+        <path d="M44.5 25.8313C31.7 2.63127 9.5 13.6693 0 22.8359V424.331H1206V22.8313C1191.17 34.8313 1157.7 56.4313 1136.5 46.8313C1115.3 37.2313 1088 44.1646 1077 48.8313C1059.33 54.8313 1031 60.8313 1016.5 46.8313C1004.21 34.962 975.667 24.8313 959 23.8313C947.667 23.6646 921.2 26.2313 906 37.8313C887 52.3313 874.5 88.3313 818.5 46.8313C753.312 -1.47775 729 -2.16872 718 1.83128C707 5.83128 684.5 42.3313 678.5 44.8313C672.5 47.3313 648.5 38.8313 642.5 34.8313C636.5 30.8313 597 24.3313 574.5 37.8313C550.919 51.9799 520.087 5.83129 497 5.83129C477 5.83129 478.5 12.8683 458.5 23.8313C436 36.1646 416 41.3313 405.5 31.3313C391.982 18.4567 338.336 14.1773 311.5 24.3313C293 31.3313 240.5 8.83127 202.5 1.83128C179 -2.49765 153.667 15.4979 137.5 22.8313C111.833 33.4979 57.3 49.0313 44.5 25.8313Z"/>
         </svg>
+        <svg class="liquidb" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 1206 425" fill="none">
+        <path d="M44.5 25.8313C31.7 2.63127 9.5 13.6693 0 22.8359V424.331H1206V22.8313C1191.17 34.8313 1157.7 56.4313 1136.5 46.8313C1115.3 37.2313 1088 44.1646 1077 48.8313C1059.33 54.8313 1031 60.8313 1016.5 46.8313C1004.21 34.962 975.667 24.8313 959 23.8313C947.667 23.6646 921.2 26.2313 906 37.8313C887 52.3313 874.5 88.3313 818.5 46.8313C753.312 -1.47775 729 -2.16872 718 1.83128C707 5.83128 684.5 42.3313 678.5 44.8313C672.5 47.3313 648.5 38.8313 642.5 34.8313C636.5 30.8313 597 24.3313 574.5 37.8313C550.919 51.9799 520.087 5.83129 497 5.83129C477 5.83129 478.5 12.8683 458.5 23.8313C436 36.1646 416 41.3313 405.5 31.3313C391.982 18.4567 338.336 14.1773 311.5 24.3313C293 31.3313 240.5 8.83127 202.5 1.83128C179 -2.49765 153.667 15.4979 137.5 22.8313C111.833 33.4979 57.3 49.0313 44.5 25.8313Z" />
+        </svg>
+        <div class="bottomliquid"></div>
     </div>
+    <div class="wearecurrently">
+        <p>We are currently</p>
+    </div>
+    <div class="counter">        <p><b>  62%</b></p>
+</div>
+<div class="towardsourgoal">        <p>towards our goal of <b>$2000</b>!</p>
+</div>
+  </div>
+  <div class="section fifthpage" data-color="orange">
+    <div class="thatmeans">
+      <p>With your donations, we can</p>
+      <p>minimize the effect cancer has on all of us!</p>
+    </div>
+    <div class="svg-grid"></div>
+  </div>
+  <div class="section sixthpage" data-color="yellow">
+    <div class="donatenow">
+      <p><b>Every dollar counts.</b></p>
+      <p>Donate today!</p>
+    </div>
+    <a href="https://support.cancer.ca/site/Donation2?idb=1167284204&df_id=37314&FR_ID=30120&mfc_pref=T&PROXY_ID=14685842&PROXY_TYPE=20&37314.donation=form1" target="_blank" rel="noopener noreferrer">
+      <button class="donate">DONATE</button>
+    </a>
   </div>
 
   <script src="https://unpkg.com/flubber"></script>
   <script src="script.js"></script>
+  <script>
+    // Scroll-based background color transition
+    const sections = document.querySelectorAll('.section');
+    const body = document.body;
+
+    window.addEventListener('scroll', () => {
+      let currentColor = 'white'; // Default color
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          currentColor = section.getAttribute('data-color');
+        }
+      });
+      body.style.backgroundColor = currentColor;
+    });
+  </script>
 </body>
 </html>
+

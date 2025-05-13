@@ -22,7 +22,7 @@ html, body {
 }
 
 .firstpage {
-    background-color: #898a93;
+    background-color: #efaa55;
 }
 
 .chart-container {
@@ -44,6 +44,15 @@ html, body {
     border-radius: 50%;
     rotate: -5deg;
     position: relative;
+}
+
+@keyframes fillPieChart {
+    0% {
+        background: conic-gradient(#343638 0% 0%, #d3a046 0% 100%);
+    }
+    100% {
+        background: conic-gradient(#343638 0% 40%, #d79147 40% 100%);
+    }
 }
 
 .firsttext-wrapper {
@@ -92,8 +101,8 @@ html, body {
     height: 86.5vh;
     transform: translate(-50%, -50%);
     z-index: -1;
-    background: #c0c0c7;
-    border: 10px solid #c0c0c7;
+    background: #ffce9a;
+    border: 10px solid #ffce9a;
     border-radius: 50%;
     animation: breathe 3s infinite ease-in-out;
     display: block;
@@ -112,11 +121,12 @@ html, body {
     position: absolute;
     bottom: 20px;
     right: 40px;
-    fill: #c0c0c7;
+    fill: #ffce9a;
     width: 5vh;
     height: 5vh;
     animation: bounce 1.5s infinite;
     cursor: pointer;
+    z-index:999;
 }
 
 @keyframes bounce {
@@ -129,25 +139,25 @@ html, body {
 }
 
 .secondpage {
-    background-color: #5a5a5e;
+    background-color: #3364ac;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding-top: 10vh;
 }
-
+ 
 .thatmeans {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%, 2vh);
     text-align: center;
-    font-size: 3vw;
+    font-size: 5vh;
     color: white;
-    padding: 0 10vw;
+    padding: 0 15vh;
     line-height: 1.2;
-    width: 85vw;
+    width: 95vw;
 }
 
 b {
@@ -171,23 +181,23 @@ b {
 
 .svg-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 10%); /* Adjust column size */
-    grid-auto-rows: 1fr; /* Ensure rows dynamically fill the height */
-    gap: 0; /* Remove gaps between cells */
-    width: 100vw; /* Ensure the grid spans the full width */
-    height: 85vh; /* Ensure the grid spans the full height */
-    margin: 5vh 0 0 0; /* Remove negative margins */
+    grid-template-columns: repeat(auto-fill, 10%);
+    grid-auto-rows: 1fr;
+    gap: 0;
+    width: 100vw;
+    height: 85vh;
+    margin: 5vh 0 0 0;
 }
 
 .svg-grid svg {
-    width: 100%; /* Make SVGs fill their grid cells */
-    height: 100%; /* Maintain aspect ratio within cells */
+    width: 100%;
+    height: 100%;
     fill: #c0c0c7;
     transition: transform 0.3s ease;
 }
 
 .svg-grid svg:hover {
-    transform: scale(1.1); /* Slight hover effect */
+    transform: scale(1.1);
 }
 
 @keyframes slowRotate {
@@ -202,13 +212,29 @@ b {
     }
 }
 
-.svg-grid svg.healthy {
-    animation: slowRotate 1s infinite ease-in-out; /* Apply the rotation animation */
+@keyframes slowerRotate {
+    0% {
+        transform: rotate(-1.5deg);
+    }
+    50% {
+        transform: rotate(1.5deg);
+    }
+    100% {
+        transform: rotate(-1.5deg);
+    }
 }
 
+.svg-grid svg.healthy {
+    animation: slowRotate 1s infinite ease-in-out;
+    transition: scale 0.3s ease;
+}
+
+.svg-grid svg.healthy:hover {
+    scale: 1.1;
+}
 
 .thirdpage {
-    background-color: #75757a;
+    background-color: #f5d96c;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -217,46 +243,59 @@ b {
 }
 .relaylogo {
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    height: 100%; /* Take full height of the parent */
-    width: 100%; /* Take full width of the parent */
-    transform: translate(27vh,-3vh)
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transform: translate(7.5vh,-3vh);
+        fill: rgb(255, 179, 56);
+
+
 }
 .moon{
     scale:200%;
     animation: twinkle 8s infinite ease-in-out;
-    transform: translateX(-8vh)
+    transform: translateX(-8vh);
+    transition: scale 0.3s ease;
+}
+
+.moon:hover, .firststar:hover, .secondstar:hover, .thirdstar:hover, .bigstar:hover{
+    scale: 220%;
+}
+.donate:hover, .counter:hover {
+    scale: 110%;
 }
 .firststar{
     scale:200%;
     animation:twinkle 4s infinite ease-in-out;
-    transform: translate(-0.5vh,-16vh)
-
+    transform: translate(-0.5vh,-16vh);
+    transition: scale 0.3s ease;
 }
 .secondstar{
     scale:200%;
     animation:twinkle 3s infinite ease-in-out;
-    transform: translate(3vh,-13.75vh)
-
+    transform: translate(3vh,-13.75vh);
+    transition: scale 0.3s ease;
 }
 .thirdstar{
     scale:200%;
     animation:twinkle 2s infinite ease-in-out;
-    transform: translate(6vh,-9.5vh)
-
+    transform: translate(6vh,-9.5vh);
+    transition: scale 0.3s ease;
 }
 .bigstar{
     scale:200%;
     animation:twinkle 5s infinite ease-in-out;
-    transform: translate(-24vh,-14vh)
-
+    transform: translate(-24vh,-14vh);
+    transition: scale 0.3s ease;
 }
 .relayis {
-    color: #fff;
+    color:    rgb(255, 255, 255);
     width:50vh;
     font-size:3.5vh;
-    transform: translateX(-36vh)
+    position:absolute;
+    animation:slowerRotate 7s infinite ease-in-out;
+
 }
 .relayis b {
     font-weight:700;
@@ -271,43 +310,256 @@ b {
         opacity: 100%;
     }
 }
+@keyframes spinspinspin{}
 
 .fourthpage {
-    background-color: #4a4a50;
+    background-color: rgb(96, 202, 88);
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
+    
 }
 
 .liquid-container {
-    position: relative;
+    position: absolute;
     width: 20vh;
     height: 60vh;
-    border: 5px solid #fff;
-    border-radius: 10px;
+    border: 0.5vh solid #fff;
+    border-radius: 1vh;
     overflow: hidden;
-    background-color: #2c2c34;
+    background-color: rgb(62, 131, 50);
+    display: flex;
 }
 
-.liquid {
+.liquida {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 200%; /* Double the width to allow seamless tiling */
+    width: 400%;
     height: 100%;
-    fill: #0077ff; /* Ensure the liquid is visible */
-    animation: moveLiquid 10s linear infinite; /* Infinite horizontal movement */
+    flex-shrink: 0;
+    animation: scrollLeft 30s linear infinite;
+    fill:rgb(73, 150, 59);
 }
 
-.liquid path {
-    transform-origin: bottom; /* Ensure proper alignment */
-}
-
-@keyframes moveLiquid {
+@keyframes scrollLeft {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%); /* Move left by half the width for seamless tiling */
+        transform: translateX(-100%);
     }
+}
+
+.liquidb {
+    position: absolute;
+    width: 400%;
+    height: 100%;
+    flex-shrink: 0;
+    animation: scrollLeftTwo 30s linear infinite;
+    fill:rgb(73, 150, 59);
+}
+
+@keyframes scrollLeftTwo {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.bottomliquid {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    flex-shrink: 0;
+    background-color: rgb(73, 150, 59);
+    transform: translateY(100%);
+}
+
+.wearecurrently, .towardsourgoal {
+    position: absolute;
+    transform: translate(-50%, 2vh);
+    text-align: center;
+    font-size: 6vh;
+    color: white;
+    padding: 0 10vw;
+    line-height: 1.2;
+    width: 85vw;
+}
+
+.wearecurrently {
+    transform: translate(0,0);
+    top:7.5vh;
+}
+.counter {
+    transform: translate(37.5vh, -12.5vh);
+    position: absolute;
+    color:#fff;
+    width:50vh;
+    font-size:5vh;
+    transition: scale 0.3s ease;
+}
+.towardsourgoal {
+    transform: translate(0, 0);
+    bottom: 7.5vh;
+}
+
+.fifthpage {
+    background-color: #3364ac;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10vh;
+}
+
+.fifthpage .svg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 10%);
+    grid-auto-rows: 1fr;
+    gap: 0;
+    width: 100vw;
+    height: 85vh;
+    margin: 5vh 0 0 0;
+}
+
+.sixthpage {
+    background-color: #fa7171;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 10vh;
+}
+.donatenow {
+    color: #fff;
+    text-align: center;
+    font-size: 7vh;
+    transform: translateY(15vh);
+}
+.donate {
+    font-family: "Winky Sans", sans-serif;
+    font-weight:800;
+    font-size: 5vh;
+    padding: 2vh 4vh;
+    border: 1vh solid #ba4d4d;
+    border-radius: 2vh;
+    background-color: #e76060;
+    color: white;
+    cursor: pointer;
+    transform: translateY(15vh);
+    transition: scale 0.3s ease;
+}
+
+@media (aspect-ratio: 1/1), (max-aspect-ratio: 1/1) {
+    .pie-chart {
+        width: 85vw;
+        height: 85vw;
+    }
+
+    .chartoutline {
+        width: 86.5vw;
+        height: 86.5vw;
+    }
+
+    .firsttext {
+        font-size: 6vw;
+    }
+    .thatmeans {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 2vh);
+    text-align: center;
+    font-size: 5vw;
+    color: white;
+    padding: 0 10vw;
+    line-height: 1.2;
+    width: 95vw;
+}
+.svg-grid svg {
+    width: 10vw;
+    scale: 1.5;
+}
+
+    .relaylogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    transform: translate(7.5vw,-3vw)
+}
+.moon{
+    scale:130%;
+    animation: twinkle 8s infinite ease-in-out;
+    transform: translate(-12vw,0);
+    transition: scale 0.3s ease;
+}
+
+.moon:hover, .firststar:hover, .secondstar:hover, .thirdstar:hover, .bigstar:hover{
+    scale: 130%;
+}
+.firststar{
+    scale:130%;
+    animation:twinkle 4s infinite ease-in-out;
+    transform: translate(-0.5vw,-32vw);
+    transition: scale 0.3s ease;
+}
+.secondstar{
+    scale:130%;
+    animation:twinkle 3s infinite ease-in-out;
+    transform: translate(4.5vw,-27.5vw);
+    transition: scale 0.3s ease;
+}
+.thirdstar{
+    scale:130%;
+    animation:twinkle 2s infinite ease-in-out;
+    transform: translate(9vw,-19vw);
+    transition: scale 0.3s ease;
+}
+.bigstar{
+    scale:130%;
+    animation:twinkle 5s infinite ease-in-out;
+    transform: translate(-53vw,-30vw);
+    transition: scale 0.3s ease;
+}
+.relayis {
+    width:50vw;
+    font-size:4.5vw;
+    position:absolute;
+    animation:slowerRotate 7s infinite ease-in-out;
+}
+
+.wearecurrently, .towardsourgoal, .counter {
+    font-size: 10vw;
+    padding: 0 10vw;
+    line-height: 1.2;
+    width: 100vw;
+}
+
+.wearecurrently {
+    transform: translate(0,0);
+    top:7.5vw;
+}
+.counter {
+    transform: translate(0,0);
+    top: 20vw;
+    font-size:15vw;
+    text-align:center;
+}
+.towardsourgoal {
+    transform: translate(0, 0);
+    top: 35vw;
+}
+
+.liquid-container {
+    position: absolute;
+    width: 20vh;
+    height: 60vh;
+    transform: translateY(15vh);
+    overflow: hidden;
+    background-color: #2c2c34;
+    display: flex;
+}
 }
