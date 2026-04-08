@@ -51,7 +51,7 @@ html, body {
         background: conic-gradient(#343638 0% 0%, #d3a046 0% 100%);
     }
     100% {
-        background: conic-gradient(#343638 0% 40%, #d79147 40% 100%);
+        background: conic-gradient(#343638 0% 40%, #e3dbd1 40% 100%);
     }
 }
 
@@ -202,13 +202,24 @@ b {
 
 @keyframes slowRotate {
     0% {
-        transform: rotate(-2deg);
+        transform: rotate(-3deg);
     }
     50% {
-        transform: rotate(2deg);
+        transform: rotate(3deg);
     }
     100% {
-        transform: rotate(-2deg);
+        transform: rotate(-3deg);
+    }
+}
+@keyframes slowRotatOtherDirection {
+    0% {
+        transform: rotate(3deg);
+    }
+    50% {
+        transform: rotate(-3deg);
+    }
+    100% {
+        transform: rotate(3deg);
     }
 }
 
@@ -225,10 +236,15 @@ b {
 }
 
 .svg-grid svg.healthy {
-    animation: slowRotate 1s infinite ease-in-out;
+    /* animation: slowRotate 1.5s infinite ease-in-out; */
     transition: scale 0.3s ease;
 }
-
+.svg-grid svg.dancing {
+    animation:slowRotatOtherDirection 1.5s infinite ease-in-out;
+}
+.svg-grid svg.otherDancing {
+    animation:slowRotate 1.5s infinite ease-in-out;
+}
 .svg-grid svg.healthy:hover {
     scale: 1.1;
 }
@@ -442,9 +458,10 @@ b {
     font-weight:800;
     font-size: 5vh;
     padding: 2vh 4vh;
-    border: 1vh solid #ba4d4d;
+    border: 1vh solid #ba4d4d00;
     border-radius: 2vh;
-    background-color: #e76060;
+    margin-top: 5vh;
+    background-color: #e14545;
     color: white;
     cursor: pointer;
     transform: translateY(15vh);

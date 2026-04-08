@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const easedProgress = progress * (2 - progress); // Ease-out function
 
       percentage = easedProgress * 40; // Target percentage is 40
-      pieChart.style.background = `conic-gradient(#d79147 0% ${percentage}%,rgb(225, 174, 112) ${percentage}% 100%)`;
+      pieChart.style.background = `conic-gradient(rgba(227, 145, 44, 1) 0% ${percentage}%,rgba(244, 169, 79, 1) ${percentage}% 100%)`;
 
       if (progress < 1) {
         requestAnimationFrame(step);
@@ -87,11 +87,18 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         svg.style.fill = "#7aaaf7";
         svg.classList.add("healthy");
+        if (Math.random() < 0.5) {
+          svg.classList.add("dancing");
+        } else {
+          svg.classList.add("otherDancing");
+        }
       }
 
       svgGrid.appendChild(svg);
     }
   }
+
+
 
   // Create SVG grid for fifthpage
   const fifthPageGrid = document.querySelector(".fifthpage .svg-grid");
@@ -112,6 +119,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       svg.style.fill = "#7aaaf7";
       svg.classList.add("healthy");
+      if (Math.random() < 0.5) {
+        svg.classList.add("dancing");
+      } else {
+        svg.classList.add("otherDancing");
+      }
 
       fifthPageGrid.appendChild(svg);
     }
