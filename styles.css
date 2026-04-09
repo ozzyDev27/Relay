@@ -11,10 +11,11 @@ html, body {
     font-family: "Winky Sans", sans-serif;
     scroll-snap-type: y mandatory;
     z-index:0;
+    background-color: #efaa55;
 }
 
 .section {
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     position: relative;
     scroll-snap-align: start;
@@ -39,8 +40,8 @@ html, body {
 }
 
 .pie-chart {
-    width: 85vh;
-    height: 85vh;
+    width: 85svh;
+    height: 85svh;
     border-radius: 50%;
     rotate: -5deg;
     position: relative;
@@ -65,7 +66,7 @@ html, body {
 }
 
 .firsttext {
-    font-size: 6vh;
+    font-size: 6svh;
     color: white;
     text-align: center;
     animation: floatUpFadeIn 1s ease-out forwards, slightrotate 10s ease-in-out infinite;
@@ -97,8 +98,8 @@ html, body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 86.5vh;
-    height: 86.5vh;
+    width: 86.5svh;
+    height: 86.5svh;
     transform: translate(-50%, -50%);
     z-index: -1;
     background: #ffce9a;
@@ -122,8 +123,8 @@ html, body {
     bottom: 20px;
     right: 40px;
     fill: #ffce9a;
-    width: 5vh;
-    height: 5vh;
+    width: 5svh;
+    height: 5svh;
     animation: bounce 1.5s infinite;
     cursor: pointer;
     z-index:999;
@@ -144,18 +145,18 @@ html, body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 10vh;
+    padding-top: 10svh;
 }
  
 .thatmeans {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, 2vh);
+    transform: translate(-50%, 2svh);
     text-align: center;
-    font-size: 5vh;
+    font-size: 5svh;
     color: white;
-    padding: 0 15vh;
+    padding: 0 15svh;
     line-height: 1.2;
     width: 95vw;
 }
@@ -166,10 +167,10 @@ b {
 
 .fallingbackground {
     position: absolute;
-    top: -100vh;
+    top: -100svh;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100svh;
     background-color: #5a5a5e;
     z-index: -1;
     animation: fall 2s forwards;
@@ -185,8 +186,8 @@ b {
     grid-auto-rows: 1fr;
     gap: 0;
     width: 100vw;
-    height: 85vh;
-    margin: 5vh 0 0 0;
+    height: 85svh;
+    margin: 5svh 0 0 0;
 }
 
 .svg-grid svg {
@@ -255,7 +256,7 @@ b {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 10vh;
+    padding-top: 10svh;
 }
 .relaylogo {
     display: flex;
@@ -263,7 +264,7 @@ b {
     justify-content: center;
     height: 100%;
     width: 100%;
-    transform: translate(7.5vh,-3vh);
+    transform: translate(7.5svh,-3svh);
         fill: rgb(255, 179, 56);
 
 
@@ -271,7 +272,7 @@ b {
 .moon{
     scale:200%;
     animation: twinkle 8s infinite ease-in-out;
-    transform: translateX(-8vh);
+    transform: translateX(-8svh);
     transition: scale 0.3s ease;
 }
 
@@ -284,31 +285,31 @@ b {
 .firststar{
     scale:200%;
     animation:twinkle 4s infinite ease-in-out;
-    transform: translate(-0.5vh,-16vh);
+    transform: translate(-0.5svh,-16svh);
     transition: scale 0.3s ease;
 }
 .secondstar{
     scale:200%;
     animation:twinkle 3s infinite ease-in-out;
-    transform: translate(3vh,-13.75vh);
+    transform: translate(3svh,-13.75svh);
     transition: scale 0.3s ease;
 }
 .thirdstar{
     scale:200%;
     animation:twinkle 2s infinite ease-in-out;
-    transform: translate(6vh,-9.5vh);
+    transform: translate(6svh,-9.5svh);
     transition: scale 0.3s ease;
 }
 .bigstar{
     scale:200%;
     animation:twinkle 5s infinite ease-in-out;
-    transform: translate(-24vh,-14vh);
+    transform: translate(-24svh,-14svh);
     transition: scale 0.3s ease;
 }
 .relayis {
     color:    rgb(255, 255, 255);
-    width:50vh;
-    font-size:3.5vh;
+    width:50svh;
+    font-size:3.5svh;
     position:absolute;
     animation:slowerRotate 7s infinite ease-in-out;
 
@@ -338,10 +339,10 @@ b {
 
 .liquid-container {
     position: absolute;
-    width: 20vh;
-    height: 60vh;
-    border: 0.5vh solid #fff;
-    border-radius: 1vh;
+    width: 20svh;
+    height: 60svh;
+    border: 1svh solid #fff;
+    border-radius: 4svh;
     overflow: hidden;
     background-color: rgb(62, 131, 50);
     display: flex;
@@ -394,9 +395,9 @@ b {
 
 .wearecurrently, .towardsourgoal {
     position: absolute;
-    transform: translate(-50%, 2vh);
+    transform: translate(-50%, 2svh);
     text-align: center;
-    font-size: 6vh;
+    font-size: 6svh;
     color: white;
     padding: 0 10vw;
     line-height: 1.2;
@@ -405,19 +406,19 @@ b {
 
 .wearecurrently {
     transform: translate(0,0);
-    top:7.5vh;
+    top:7.5svh;
 }
 .counter {
-    transform: translate(37.5vh, -12.5vh);
+    transform: translate(37.5svh, -12.5svh);
     position: absolute;
     color:#fff;
-    width:50vh;
-    font-size:5vh;
+    width:50svh;
+    font-size:5svh;
     transition: scale 0.3s ease;
 }
 .towardsourgoal {
     transform: translate(0, 0);
-    bottom: 7.5vh;
+    bottom: 7.5svh;
 }
 
 .fifthpage {
@@ -426,7 +427,7 @@ b {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 10vh;
+    padding-top: 10svh;
 }
 
 .fifthpage .svg-grid {
@@ -435,8 +436,8 @@ b {
     grid-auto-rows: 1fr;
     gap: 0;
     width: 100vw;
-    height: 85vh;
-    margin: 5vh 0 0 0;
+    height: 85svh;
+    margin: 5svh 0 0 0;
 }
 
 .sixthpage {
@@ -445,26 +446,26 @@ b {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding-top: 10vh;
+    padding-top: 10svh;
 }
 .donatenow {
     color: #fff;
     text-align: center;
-    font-size: 7vh;
-    transform: translateY(15vh);
+    font-size: 7svh;
+    transform: translateY(15svh);
 }
 .donate {
     font-family: "Winky Sans", sans-serif;
     font-weight:800;
-    font-size: 5vh;
-    padding: 2vh 4vh;
-    border: 1vh solid #ba4d4d00;
-    border-radius: 2vh;
-    margin-top: 5vh;
+    font-size: 5svh;
+    padding: 2svh 4svh;
+    border: 1svh solid #ba4d4d00;
+    border-radius: 2svh;
+    margin-top: 5svh;
     background-color: #e14545;
     color: white;
     cursor: pointer;
-    transform: translateY(15vh);
+    transform: translateY(15svh);
     transition: scale 0.3s ease;
 }
 
@@ -486,7 +487,7 @@ b {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translate(-50%, 2vh);
+    transform: translate(-50%, 2svh);
     text-align: center;
     font-size: 5vw;
     color: white;
@@ -572,9 +573,9 @@ b {
 
 .liquid-container {
     position: absolute;
-    width: 20vh;
-    height: 60vh;
-    transform: translateY(15vh);
+    width: 20svh;
+    height: 60svh;
+    transform: translateY(15svh);
     overflow: hidden;
     background-color: #2c2c34;
     display: flex;

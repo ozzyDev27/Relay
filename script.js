@@ -5,15 +5,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let percentage = 0;
   function animatePie() {
-    const duration = 1000; // Total animation duration in milliseconds
+    const duration = 1000;
     const startTime = performance.now();
 
     function step(currentTime) {
       const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1); // Clamp progress between 0 and 1
-      const easedProgress = progress * (2 - progress); // Ease-out function
+      const progress = Math.min(elapsed / duration, 1); 
+      const easedProgress = progress * (2 - progress); 
 
-      percentage = easedProgress * 40; // Target percentage is 40
+      percentage = easedProgress * 40;
       pieChart.style.background = `conic-gradient(rgba(227, 145, 44, 1) 0% ${percentage}%,rgba(244, 169, 79, 1) ${percentage}% 100%)`;
 
       if (progress < 1) {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   requestAnimationFrame(() => {
-    animatePie(); // Ensure animation starts after rendering is complete
+    animatePie();
   });
 
   setTimeout(() => {
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const svgGrid = document.querySelector(".svg-grid");
   if (svgGrid) {
     const totalSVGs = 50;
-    const highlightedCount = 10;
+    const highlightedCount = 20;
     const highlightedIndices = new Set();
 
     while (highlightedIndices.size < highlightedCount) {
@@ -100,7 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // Create SVG grid for fifthpage
   const fifthPageGrid = document.querySelector(".fifthpage .svg-grid");
   if (fifthPageGrid) {
     const totalSVGs = 50;
@@ -129,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // 🔁 Liquid Morphing Animation using Flubber
   const liquidPath = document.querySelector("#liquidPath");
   const shapes = [
     "M200 388V13.9124C200 13.9124 199.991 14.1091 193 18.9542C171.723 33.7003 158 4.81771 138 13.9124C112.5 25.5081 115 24.4997 82.5 12.9041C63.1175 5.98857 16.5 -12.3038 0 12.9041V388H200Z",

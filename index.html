@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#efaa55"/>
   <title>Relay for Life!</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +14,7 @@
 <body>
   <div class="falling-background"></div>
 
-  <div class="section firstpage" data-color="red">
+  <div class="section firstpage" data-color="#efaa55">
     <div class="chart-container">
       <div class="chartoutline"></div>
       <div class="pie-chart" id="pieChart">
@@ -27,7 +28,7 @@
     </svg>
   </div>
 
-  <div class="section secondpage" id="secondPage" data-color="blue">
+  <div class="section secondpage" id="secondPage" data-color="#3364ac">
     <div class="thatmeans">
       <p>That means for every <b>5 Canadians</b>,</p>
       <p><b>2</b> will be diagnosed with cancer in their lifetime.</p>
@@ -35,7 +36,7 @@
     <div class="svg-grid"></div>
   </div>
 
-  <div class="section thirdpage" data-color="purple">
+  <div class="section thirdpage" data-color="#f5d96c">
     <div class="relaylogo">
       <div class="moon"><svg xmlns="http://www.w3.org/2000/svg" width="15vh" height="29.2vh" viewBox="0 0 150 292"><path d="M149.944 0C-18.0559 7.40215e-06 -79.5559 259.5 149.944 292C8.94414 230 14.4441 63.5 149.944 0Z" /></svg></div>
       <div class="firststar"><svg xmlns="http://www.w3.org/2000/svg" width="3.3vh" height="2.8vh" viewBox="0 0 33 28"><path d="M22 0L0 22L33 28L22 0Z" /></svg></div>
@@ -49,7 +50,7 @@
   </div> 
   
 
-  <div class="section fourthpage" data-color="green">
+  <div class="section fourthpage" data-color="#60ca58">
     <div class="liquid-container">
         <svg class="liquida" xmlns="http://www.w3.org/2000/svg"viewBox="0 0 1206 425" fill="none">
         <path d="M44.5 25.8313C31.7 2.63127 9.5 13.6693 0 22.8359V424.331H1206V22.8313C1191.17 34.8313 1157.7 56.4313 1136.5 46.8313C1115.3 37.2313 1088 44.1646 1077 48.8313C1059.33 54.8313 1031 60.8313 1016.5 46.8313C1004.21 34.962 975.667 24.8313 959 23.8313C947.667 23.6646 921.2 26.2313 906 37.8313C887 52.3313 874.5 88.3313 818.5 46.8313C753.312 -1.47775 729 -2.16872 718 1.83128C707 5.83128 684.5 42.3313 678.5 44.8313C672.5 47.3313 648.5 38.8313 642.5 34.8313C636.5 30.8313 597 24.3313 574.5 37.8313C550.919 51.9799 520.087 5.83129 497 5.83129C477 5.83129 478.5 12.8683 458.5 23.8313C436 36.1646 416 41.3313 405.5 31.3313C391.982 18.4567 338.336 14.1773 311.5 24.3313C293 31.3313 240.5 8.83127 202.5 1.83128C179 -2.49765 153.667 15.4979 137.5 22.8313C111.833 33.4979 57.3 49.0313 44.5 25.8313Z"/>
@@ -67,14 +68,14 @@
 <div class="towardsourgoal">        <p>towards our goal of <b>$2000</b>!</p>
 </div>
   </div>
-  <div class="section fifthpage" data-color="orange">
+  <div class="section fifthpage" data-color="#3364ac">
     <div class="thatmeans">
       <p>With your donations, we can</p>
       <p>minimize the effect cancer has on all of us!</p>
     </div>
     <div class="svg-grid"></div>
   </div>
-  <div class="section sixthpage" data-color="yellow">
+  <div class="section sixthpage" data-color="#fa7171">
     <div class="donatenow">
       <p><b>Every dollar counts.</b></p>
       <p>Donate today!</p>
@@ -87,12 +88,12 @@
   <script src="https://unpkg.com/flubber"></script>
   <script src="script.js"></script>
   <script>
-    // Scroll-based background color transition
     const sections = document.querySelectorAll('.section');
     const body = document.body;
+    const themeColorMeta = document.querySelector('meta[name="theme-color"]');
 
-    window.addEventListener('scroll', () => {
-      let currentColor = 'white'; // Default color
+    function updateBackground() {
+      let currentColor = '#efaa55'; 
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
@@ -100,7 +101,11 @@
         }
       });
       body.style.backgroundColor = currentColor;
-    });
+      if (themeColorMeta) themeColorMeta.setAttribute('content', currentColor);
+    }
+
+    window.addEventListener('scroll', updateBackground);
+    updateBackground();
   </script>
 </body>
 </html>
