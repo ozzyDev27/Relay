@@ -12,6 +12,7 @@ html, body {
     scroll-snap-type: y mandatory;
     z-index:0;
     background-color: #efaa55;
+    /* change background-color to the current page the user is on */
 }
 
 .section {
@@ -237,7 +238,6 @@ b {
 }
 
 .svg-grid svg.healthy {
-    /* animation: slowRotate 1.5s infinite ease-in-out; */
     transition: scale 0.3s ease;
 }
 .svg-grid svg.dancing {
@@ -341,12 +341,18 @@ b {
     position: absolute;
     width: 20svh;
     height: 60svh;
-    border: 1svh solid #fff;
+    outline: 1svh solid #fff;
     border-radius: 4svh;
     overflow: hidden;
     background-color: rgb(62, 131, 50);
     display: flex;
+    transition: 0.3s ease;
 }
+.liquid-container:hover {
+    outline: 2svh solid #fff;
+    /* when liquid container is hovered, the counter text should have its hover effect trigger as well.*/
+}
+
 
 .liquida {
     position: absolute;
