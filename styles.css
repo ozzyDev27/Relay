@@ -350,7 +350,6 @@ b {
 }
 .liquid-container:hover {
     outline: 2svh solid #fff;
-    /* when liquid container is hovered, the counter text should have its hover effect trigger as well.*/
 }
 
 
